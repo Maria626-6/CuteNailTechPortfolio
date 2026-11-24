@@ -19,7 +19,7 @@ type GalleryItem = {
 const gallery: GalleryItem[] = [
   {
     title: 'Love on Fire',
-    type: 'Art',
+    type: 'Acrylic',
     image: '/images/coral-heart-set.jpg',
     alt: 'Long coral red nails with a soft pink heart accent by Maria',
     badge: 'Recently Done!',
@@ -37,7 +37,7 @@ const gallery: GalleryItem[] = [
     alt: 'Deep blue glitter gel nails by Maria',
   },
   {
-    title: 'French Bows',
+    title: 'French Flower',
     type: 'Art',
     image: '/images/french-bow-set.jpg',
     alt: 'White French manicure with delicate bow accents by Maria',
@@ -52,19 +52,19 @@ const gallery: GalleryItem[] = [
   },
   {
     title: 'Seaside Blooms',
-    type: 'Art',
+    type: 'Acrylic',
     image: '/images/white-floral-set.png',
     alt: 'Long white glitter nails with pink flowers and gold starfish by Maria',
   },
   {
     title: 'Blue Crush',
-    type: 'Gel',
+    type: 'Acrylic',
     image: '/images/blue-glitter-set.png',
     alt: 'Long turquoise glitter nails with blue art by Maria',
   },
   {
     title: 'Electric Lime',
-    type: 'Gel',
+    type: 'Acrylic',
     image: '/images/green-gloss-set.png',
     alt: 'Glossy vivid green sculpted nails by Maria',
   },
@@ -97,7 +97,7 @@ const gallery: GalleryItem[] = [
   },
   {
     title: 'Sweetheart',
-    type: 'Art',
+    type: 'Acrylic',
     image: '/images/pink-heart-set.jpg',
     alt: 'Long blush pink nails with crystal hearts and glitter by Maria',
     hoverVideo: '/images/sweetheart-hover.mp4',
@@ -171,7 +171,7 @@ function Flower({ className = '' }: { className?: string }) {
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [filter, setFilter] = useState('All')
-  const filters = ['All', 'Gel', 'Art']
+  const filters = ['All', 'Acrylic', 'Art', 'Gel']
 
   const closeMenu = () => setMenuOpen(false)
   const visibleWork = filter === 'All' ? gallery : gallery.filter((item) => item.type === filter)
@@ -224,7 +224,7 @@ export default function App() {
         <div className="hero-copy">
           <div className="eyebrow">
             <span />
-            Independent nail artist · Batemans Bay, NSW
+            Independent nail artist · Batehaven, NSW
           </div>
           <h1>
             Tiny art.
@@ -460,17 +460,17 @@ export default function App() {
           <div>
             <span>Location</span>
             <p>
-              Private studio
+              Private home studio
               <br />
-              Downtown · Your city
+              Clare Crescent  · Batehaven, NSW
             </p>
           </div>
           <div>
             <span>Studio hours</span>
             <p>
-              Tue–Sat
+              Mon–Sun
               <br />
-              10am–6pm
+              9am–6pm
             </p>
           </div>
           <div>

@@ -10,7 +10,7 @@ const title = makeSiteSettings.title ?? defaultTitle
 const description =
   makeSiteSettings.description ??
   'Independent nail artist in Batemans Bay, NSW, offering acrylic sets and playful custom nail art.'
-const favicon = makeSiteSettings.icons?.icon ?? '/favicon.svg'
+const favicon = makeSiteSettings.icons?.icon ?? '/images/marshmallowmami-nail-charm-logo.png'
 const socialImage = makeSiteSettings.openGraph?.image
 const googleAnalyticsId = sanitizeHtmlAttribute(makeSiteSettings.analytics?.googleAnalyticsId)
 
