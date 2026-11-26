@@ -633,7 +633,7 @@ h2 {
   flex-direction: column;
   height: 130px;
   justify-content: center;
-  left: -20px;
+  left: clamp(-48px, -3.75vw, -20px);
   position: absolute;
   top: 52%;
   transform: rotate(-10deg);

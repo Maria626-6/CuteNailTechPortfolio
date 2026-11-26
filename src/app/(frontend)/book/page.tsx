@@ -12,25 +12,25 @@ export default function BookPage() {
   return (
     <main className="min-h-screen bg-[#fffaf2] text-[#30231f]">
       <header className="border-b border-[#30231f]/10 bg-[#fffaf2]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-2 py-2 sm:gap-6 sm:px-8 sm:py-3">
           <Link
             href="/"
-            className="flex items-center gap-3 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ef4b43]"
+            className="flex min-w-0 items-center gap-1.5 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ef4b43] sm:gap-3"
           >
             <Image
               src="/images/marshmallowmami-nail-charm-logo.png"
               alt=""
               width={62}
               height={62}
-              className="h-14 w-14 object-contain"
+              className="h-11 w-11 shrink-0 rounded-full bg-[#fce9eb] object-contain sm:h-16 sm:w-16"
             />
-            <span className="hidden font-['Playfair_Display'] text-xl italic sm:block">
+            <span className="whitespace-nowrap font-['Playfair_Display'] text-[13px] italic sm:text-2xl">
               Marshmallowmami Nails
             </span>
           </Link>
           <Link
             href="/"
-            className="rounded-full border border-[#30231f]/20 px-4 py-2 text-sm font-semibold transition hover:border-[#ef4b43] hover:text-[#ef4b43] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ef4b43]"
+            className="shrink-0 rounded-full border border-[#30231f]/20 px-2 py-2 text-[11px] font-semibold transition hover:border-[#ef4b43] hover:text-[#ef4b43] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ef4b43] sm:px-4 sm:text-sm"
           >
             Back to portfolio
           </Link>
