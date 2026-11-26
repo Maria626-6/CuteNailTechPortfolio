@@ -175,10 +175,20 @@ export default function App() {
 
   const closeMenu = () => setMenuOpen(false)
   const visibleWork = filter === 'All' ? gallery : gallery.filter((item) => item.type === filter)
+  const navClasses = [
+    'max-[900px]:absolute max-[900px]:inset-x-0 max-[900px]:top-0 max-[900px]:flex-col max-[900px]:items-stretch max-[900px]:gap-0 max-[900px]:border-b max-[900px]:border-[var(--ink)] max-[900px]:bg-[var(--cream)] max-[900px]:px-[5vw] max-[900px]:pt-[85px] max-[900px]:pb-[30px] max-[900px]:transition-[opacity,transform] max-[900px]:duration-[180ms]',
+    menuOpen
+      ? 'max-[900px]:pointer-events-auto max-[900px]:translate-y-0 max-[900px]:opacity-100'
+      : 'max-[900px]:pointer-events-none max-[900px]:-translate-y-5 max-[900px]:opacity-0',
+  ].join(' ')
+  const navLinkClasses =
+    "max-[900px]:border-b max-[900px]:border-[rgba(48,35,31,0.15)] max-[900px]:py-[14px] max-[900px]:font-['Playfair_Display'] max-[900px]:text-[30px]"
+  const navCtaClasses =
+    "max-[900px]:py-[14px] max-[900px]:font-['Playfair_Display'] max-[900px]:text-[30px]"
 
   return (
     <main>
-      <header className="site-header">
+      <header className="site-header max-[900px]:h-[70px]">
         <a
           className="brand"
           href="#top"
@@ -186,7 +196,7 @@ export default function App() {
           aria-label="Marshmallowmami Nails home"
         >
           <Image
-            className="brand-logo"
+            className="brand-logo max-[900px]:h-[54px] max-[900px]:w-[54px]"
             src="/images/marshmallowmami-nail-charm-logo.png"
             alt="Marshmallowmami Nails"
             width={990}
@@ -195,7 +205,7 @@ export default function App() {
           />
         </a>
         <button
-          className="menu-button"
+          className="menu-button max-[900px]:relative max-[900px]:z-[2] max-[900px]:block"
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
@@ -204,29 +214,33 @@ export default function App() {
           <span />
           <span />
         </button>
-        <nav className={menuOpen ? 'nav-open' : ''} aria-label="Main navigation">
-          <a href="#work" onClick={closeMenu}>
+        <nav className={navClasses} aria-label="Main navigation">
+          <a className={navLinkClasses} href="#work" onClick={closeMenu}>
             Work
           </a>
-          <a href="#services" onClick={closeMenu}>
+          <a className={navLinkClasses} href="#services" onClick={closeMenu}>
             Services
           </a>
-          <a href="#about" onClick={closeMenu}>
+          <a className={navLinkClasses} href="#about" onClick={closeMenu}>
             About
           </a>
-          <Link className="nav-cta" href="/book" onClick={closeMenu}>
+          <Link
+            className={`${navCtaClasses} nav-cta max-[900px]:mt-5 max-[900px]:border-0 max-[900px]:rounded-none max-[900px]:px-0 max-[900px]:text-center`}
+            href="/book"
+            onClick={closeMenu}
+          >
             Book a set
           </Link>
         </nav>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
+      <section className="hero max-[900px]:grid-cols-1 max-[900px]:pt-[70px]" id="top">
+        <div className="hero-copy max-[900px]:min-h-[640px] max-[900px]:px-[6vw] max-[900px]:pt-20 max-[900px]:pb-[65px] max-[640px]:min-h-[590px]">
           <div className="eyebrow">
             <span />
             Independent nail artist · Batehaven, NSW
           </div>
-          <h1>
+          <h1 className="max-[640px]:text-[64px]">
             Tiny art.
             <br />
             <em>Big mood.</em>
@@ -235,7 +249,7 @@ export default function App() {
             Thoughtful gel manicures, acrylic and playful nail art, made slowly in a cozy little
             studio. ❤︎
           </p>
-          <div className="hero-actions">
+          <div className="hero-actions max-[640px]:items-start max-[640px]:flex-col">
             <Link className="button button-dark" href="/book">
               Book your set <span aria-hidden="true">↗</span>
             </Link>
@@ -243,7 +257,7 @@ export default function App() {
               See my work <span aria-hidden="true">↓</span>
             </a>
           </div>
-          <div className="trust-note">
+          <div className="trust-note max-[640px]:mt-[55px]">
             <div className="stars" aria-label="5 out of 5 stars">
               ★ ★ ★ ★ ★
             </div>
@@ -251,8 +265,8 @@ export default function App() {
           </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="hero-image-wrap">
+        <div className="hero-visual max-[900px]:min-h-[690px] max-[640px]:min-h-[540px] max-[640px]:px-[8%] max-[640px]:py-[10%]">
+          <div className="hero-image-wrap max-[640px]:min-h-[450px]">
             <Image
               src="/images/pink-heart-set.jpg"
               alt="Blush pink crystal heart nail art created by Maria"
@@ -261,8 +275,8 @@ export default function App() {
               priority
             />
           </div>
-          <div className="hero-sticker">
-            <Flower />
+          <div className="hero-sticker max-[640px]:right-[1%] max-[640px]:h-[105px] max-[640px]:w-[105px]">
+            <Flower className="max-[640px]:h-[30px] max-[640px]:w-[30px]" />
             <span>Soft gel specialist</span>
           </div>
           <div className="scribble">cute nails club</div>
@@ -282,11 +296,11 @@ export default function App() {
         </div>
       </div>
 
-      <section className="work section" id="work">
-        <div className="section-heading">
+      <section className="work section max-[900px]:px-[6vw] max-[900px]:py-[100px]" id="work">
+        <div className="section-heading max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-[35px]">
           <div>
             <p className="kicker">Fresh from the studio</p>
-            <h2>
+            <h2 className="max-[640px]:text-[49px]">
               Recent little <em>masterpieces.</em>
             </h2>
           </div>
@@ -348,18 +362,21 @@ export default function App() {
                 )}
               </div>
               <figcaption>
-                <span>{item.title}</span>
-                <small>{item.type}</small>
+                <span className="max-[640px]:text-[17px]">{item.title}</span>
+                <small className="max-[640px]:hidden">{item.type}</small>
               </figcaption>
             </figure>
           ))}
         </div>
       </section>
 
-      <section className="services section" id="services">
-        <div className="service-intro">
+      <section
+        className="services section max-[900px]:grid-cols-1 max-[900px]:gap-[70px] max-[900px]:px-[6vw] max-[900px]:py-[100px]"
+        id="services"
+      >
+        <div className="service-intro max-[900px]:static">
           <p className="kicker">The nail menu</p>
-          <h2>
+          <h2 className="max-[640px]:text-[49px]">
             Pick your <em>pleasure.</em>
           </h2>
           <p>
@@ -372,10 +389,10 @@ export default function App() {
         </div>
         <div className="price-list">
           {services.map((service, index) => (
-            <article key={service.name}>
+            <article className="max-[640px]:grid-cols-[30px_1fr_auto]" key={service.name}>
               <span className="service-number">0{index + 1}</span>
               <div>
-                <h3>{service.name}</h3>
+                <h3 className="max-[640px]:text-[23px]">{service.name}</h3>
                 <p>{service.detail}</p>
                 <small>{service.time}</small>
               </div>
@@ -386,9 +403,12 @@ export default function App() {
         </div>
       </section>
 
-      <section className="about section" id="about">
-        <div className="about-collage">
-          <div className="about-image-main">
+      <section
+        className="about section max-[900px]:grid-cols-1 max-[900px]:gap-[70px] max-[900px]:px-[6vw] max-[900px]:pt-[90px] max-[900px]:pb-[100px]"
+        id="about"
+      >
+        <div className="about-collage max-[900px]:order-2 max-[640px]:min-h-[500px]">
+          <div className="about-image-main max-[640px]:h-[450px] max-[640px]:w-[88%]">
             <Image
               src="/images/white-floral-set.png"
               alt="White floral nail art created by Maria"
@@ -396,7 +416,7 @@ export default function App() {
               sizes="(max-width: 900px) 70vw, 38vw"
             />
           </div>
-          <div className="about-image-small">
+          <div className="about-image-small max-[640px]:h-[175px] max-[640px]:w-[42%]">
             <Image
               src="/images/green-gloss-set.png"
               alt="Bright green sculpted nails created by Maria"
@@ -411,7 +431,7 @@ export default function App() {
         </div>
         <div className="about-copy">
           <p className="kicker">Meet your nail bestie</p>
-          <h2>Hi, I’m Maria.</h2>
+          <h2 className="max-[640px]:text-[49px]">Hi, I’m Maria.</h2>
           <p className="about-lede">
             I believe getting your nails done should feel like a tiny vacation.
           </p>
@@ -433,20 +453,23 @@ export default function App() {
         </div>
       </section>
 
-      <section className="testimonial">
+      <section className="testimonial max-[640px]:px-[6vw] max-[640px]:py-[90px]">
         <Flower className="quote-flower" />
         <p className="kicker">Love notes</p>
-        <blockquote>
+        <blockquote className="max-[640px]:text-[36px]">
           “Maria is pure magic. My nails have never been healthier, and somehow she turns every
           random idea I bring into the cutest set ever.”
         </blockquote>
         <p className="client">— Jamie, regular since 2022</p>
       </section>
 
-      <section className="booking section" id="book">
+      <section
+        className="booking section max-[900px]:grid-cols-1 max-[900px]:gap-[70px] max-[900px]:px-[6vw] max-[900px]:py-[100px]"
+        id="book"
+      >
         <div className="booking-copy">
           <p className="kicker">Ready when you are</p>
-          <h2>
+          <h2 className="max-[640px]:text-[49px]">
             Your dream nails are <em>one click away.</em>
           </h2>
           <p>
@@ -456,7 +479,7 @@ export default function App() {
             Book an appointment <span aria-hidden="true">↗</span>
           </Link>
         </div>
-        <div className="booking-info">
+        <div className="booking-info max-[900px]:mt-[10px]">
           <div>
             <span>Location</span>
             <p>
@@ -495,8 +518,12 @@ export default function App() {
         </div>
       </section>
 
-      <footer>
-        <a className="brand footer-brand" href="#top" aria-label="Marshmallowmami Nails home">
+      <footer className="max-[640px]:grid-cols-1 max-[640px]:gap-5 max-[640px]:text-center">
+        <a
+          className="brand footer-brand max-[640px]:justify-self-center"
+          href="#top"
+          aria-label="Marshmallowmami Nails home"
+        >
           <Image
             className="brand-logo"
             src="/images/marshmallowmami-nail-charm-logo.png"
@@ -506,7 +533,7 @@ export default function App() {
           />
         </a>
         <p>Small studio. Big nail energy.</p>
-        <div>
+        <div className="max-[640px]:items-center">
           <a href="#top">Back to top ↑</a>
           <span>© 2025 Marshmallowmami Nails</span>
         </div>

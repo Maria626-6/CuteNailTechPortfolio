@@ -7,6 +7,7 @@
     "dev": "node scripts/run-command.mjs next dev",
     "build": "node scripts/run-command.mjs payload build",
     "start": "node scripts/run-command.mjs next start",
+    "build:netlify": "node scripts/build-netlify.mjs",
     "format": "oxfmt",
     "generate:importmap": "node scripts/run-command.mjs payload generate:importmap",
     "generate:types": "node scripts/run-command.mjs payload generate:types",

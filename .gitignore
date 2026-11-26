@@ -1,5 +1,8 @@
 node_modules/
 .next/
+netlify-site/.next/
+netlify-site/out/
+netlify-site/public/
 out/
 dist/
 build/

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Gochi+Hand&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
 @import 'tailwindcss';
+@source "../../components";
 
 :root {
   --ink: #30231f;
@@ -33,10 +34,11 @@
   }
 }
 
-::selection {
-  background: var(--pink);
-  color: var(--ink);
-}
+@layer components {
+  ::selection {
+    background: var(--pink);
+    color: var(--ink);
+  }
 
 .site-header {
   align-items: center;
@@ -844,213 +846,6 @@ footer a {
   color: white;
   text-decoration: none;
 }
-
-@media (max-width: 900px) {
-  .site-header {
-    height: 70px;
-  }
-
-  .site-header .brand-logo {
-    height: 54px;
-    width: 54px;
-  }
-
-  .menu-button {
-    display: block;
-    position: relative;
-    z-index: 2;
-  }
-
-  .site-header nav {
-    align-items: stretch;
-    background: var(--cream);
-    border-bottom: 1px solid var(--ink);
-    flex-direction: column;
-    gap: 0;
-    left: 0;
-    opacity: 0;
-    padding: 85px 5vw 30px;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translateY(-20px);
-    transition:
-      opacity 180ms ease,
-      transform 180ms ease;
-  }
-
-  .site-header nav.nav-open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .site-header nav a {
-    border-bottom: 1px solid rgba(48, 35, 31, 0.15);
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    padding: 14px 0;
-  }
-
-  .site-header .nav-cta {
-    border: 0;
-    border-radius: 0;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 70px;
-  }
-
-  .hero-copy {
-    min-height: 640px;
-    padding: 80px 6vw 65px;
-  }
-
-  .hero-visual {
-    min-height: 690px;
-  }
-
-  .section {
-    padding: 100px 6vw;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 35px;
-  }
-
-  .services,
-  .about,
-  .booking {
-    gap: 70px;
-    grid-template-columns: 1fr;
-  }
-
-  .service-intro {
-    position: static;
-  }
-
-  .about {
-    padding-top: 90px;
-  }
-
-  .about-collage {
-    order: 2;
-  }
-
-  .booking-info {
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 640px) {
-  h1 {
-    font-size: 64px;
-  }
-
-  h2 {
-    font-size: 49px;
-  }
-
-  .hero-copy {
-    min-height: 590px;
-  }
-
-  .hero-actions {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .trust-note {
-    margin-top: 55px;
-  }
-
-  .hero-visual {
-    min-height: 540px;
-    padding: 10% 8%;
-  }
-
-  .hero-image-wrap {
-    min-height: 450px;
-  }
-
-  .hero-sticker {
-    height: 105px;
-    right: 1%;
-    width: 105px;
-  }
-
-  .hero-sticker svg {
-    height: 30px;
-    width: 30px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .gallery-card figcaption span {
-    font-size: 17px;
-  }
-
-  .gallery-card figcaption small {
-    display: none;
-  }
-
-  .price-list article {
-    grid-template-columns: 30px 1fr auto;
-  }
-
-  .price-list h3 {
-    font-size: 23px;
-  }
-
-  .about-collage {
-    min-height: 500px;
-  }
-
-  .about-image-main {
-    height: 450px;
-    width: 88%;
-  }
-
-  .about-image-small {
-    height: 175px;
-    width: 42%;
-  }
-
-  .about-badge {
-    height: 105px;
-    left: -10px;
-    width: 105px;
-  }
-
-  .testimonial {
-    padding: 90px 6vw;
-  }
-
-  blockquote {
-    font-size: 36px;
-  }
-
-  footer {
-    gap: 20px;
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-brand {
-    justify-self: center;
-  }
-
-  footer > div {
-    align-items: center;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
