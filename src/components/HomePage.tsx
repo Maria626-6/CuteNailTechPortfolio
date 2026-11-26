@@ -426,7 +426,7 @@ export default function App() {
           </div>
           <div className="about-badge">
             <Flower />
-            <span className="about-badge-label">Certified &amp; obsessed</span>
+            <span className="about-badge-label">Unique sets everytime!</span>
           </div>
         </div>
         <div className="about-copy">
@@ -535,7 +535,7 @@ export default function App() {
         <p>Small studio. Big nail energy.</p>
         <div className="max-[640px]:items-center">
           <a href="#top">Back to top ↑</a>
-          <span>© 2025 Marshmallowmami Nails</span>
+          <span>© 2026 Marshmallowmami Nails</span>
         </div>
       </footer>
     </main>
