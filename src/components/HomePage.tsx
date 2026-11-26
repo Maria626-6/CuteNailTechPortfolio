@@ -275,7 +275,7 @@ export default function App() {
               priority
             />
           </div>
-          <div className="hero-sticker max-[640px]:right-[1%] max-[640px]:h-[105px] max-[640px]:w-[105px]">
+          <div className="hero-sticker max-[640px]:right-[4%] max-[640px]:h-[105px] max-[640px]:w-[105px]">
             <Flower className="max-[640px]:h-[30px] max-[640px]:w-[30px]" />
             <span>Soft gel specialist</span>
           </div>
@@ -407,8 +407,8 @@ export default function App() {
         className="about section max-[900px]:grid-cols-1 max-[900px]:gap-[70px] max-[900px]:px-[6vw] max-[900px]:pt-[90px] max-[900px]:pb-[100px]"
         id="about"
       >
-        <div className="about-collage max-[900px]:order-2 max-[640px]:min-h-[500px]">
-          <div className="about-image-main max-[640px]:h-[450px] max-[640px]:w-[88%]">
+        <div className="about-collage max-[900px]:order-2 max-[640px]:min-h-[450px]">
+          <div className="about-image-main max-[640px]:h-[400px] max-[640px]:w-[88%]">
             <Image
               src="/images/white-floral-set.png"
               alt="White floral nail art created by Maria"
@@ -416,7 +416,7 @@ export default function App() {
               sizes="(max-width: 900px) 70vw, 38vw"
             />
           </div>
-          <div className="about-image-small max-[640px]:h-[175px] max-[640px]:w-[42%]">
+          <div className="about-image-small max-[640px]:h-[145px] max-[640px]:w-[42%]">
             <Image
               src="/images/green-gloss-set.png"
               alt="Bright green sculpted nails created by Maria"
@@ -498,8 +498,9 @@ export default function App() {
           </div>
           <div>
             <span>Say hello</span>
-            <p className="social-links">
+            <p className="social-links max-[640px]:items-stretch max-[640px]:break-words">
               <a
+                className="max-[640px]:min-w-0"
                 href="https://www.instagram.com/marshmallowmami.nails/"
                 target="_blank"
                 rel="noreferrer"
@@ -507,6 +508,7 @@ export default function App() {
                 Instagram · @marshmallowmami.nails
               </a>
               <a
+                className="max-[640px]:min-w-0"
                 href="https://www.tiktok.com/@marshmallowmami.nails?lang=en"
                 target="_blank"
                 rel="noreferrer"

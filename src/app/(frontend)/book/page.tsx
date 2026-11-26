@@ -30,9 +30,10 @@ export default function BookPage() {
           </Link>
           <Link
             href="/"
-            className="shrink-0 rounded-full border border-[#30231f]/20 px-2 py-2 text-[11px] font-semibold transition hover:border-[#ef4b43] hover:text-[#ef4b43] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ef4b43] sm:px-4 sm:text-sm"
+            className="shrink-0 whitespace-nowrap rounded-full border border-[#30231f]/20 px-2 py-2 text-[11px] font-semibold transition hover:border-[#ef4b43] hover:text-[#ef4b43] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ef4b43] sm:px-4 sm:text-sm"
           >
-            Back to portfolio
+            <span className="sm:hidden">Portfolio</span>
+            <span className="hidden sm:inline">Back to portfolio</span>
           </Link>
         </div>
       </header>

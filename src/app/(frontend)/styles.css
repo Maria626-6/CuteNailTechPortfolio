@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Gochi+Hand&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
 @import 'tailwindcss';
 @source "../../components";
+@source "./book/page.tsx";
 
 :root {
   --ink: #30231f;
@@ -642,12 +643,12 @@ h2 {
 
 .about-badge span {
   font-family: 'Gochi Hand', cursive;
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 3px;
 }
 
 .about-badge-label {
-  margin-left: 19px;
+  margin-left: 26px;
 }
 
 .about-copy h2 {
